@@ -1,7 +1,7 @@
 body {
 
     background: #f1f1f1;
-    padding:48px;
+    padding:24px;
 }
 
 div#app-bar {
@@ -12,6 +12,11 @@ div#app-bar {
 span#app-bar-title {
 
     padding-right: 16px;
+}
+
+div#loading-div {
+
+    padding:48px;
 }
 
 div#search-div {

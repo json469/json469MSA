@@ -1,15 +1,19 @@
 import * as React from 'react';
 import { default as NumberFormat } from 'react-number-format';
 
+import CircularProgress from '@material-ui/core/CircularProgress';
+
 interface ICryptoProp {
 
     cryptos: {}
+    loading: boolean
 }
-
 
 class Cryptos extends React.Component<ICryptoProp> {
 
     public render() {
+
+        if (this.props.loading) { return (<div id="loading-div"><CircularProgress thickness={5}/></div>) }
 
         return (
 

@@ -12,12 +12,11 @@ class App extends React.Component {
 
     cryptoInfo: {},
     cryptos: {},
-    error: undefined
+    error: undefined,
+    loading: true
   }
 
-
-  public getCoinInfo = async (e: any) => {
-
+  public getCoinInfo = (e: any) => {
 
     e.preventDefault();
     
@@ -25,11 +24,14 @@ class App extends React.Component {
 
     if(coinName) {
       
-      await axios.get(`https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${coinName}&tsyms=USD`)
+      axios.get(`https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${coinName}&tsyms=USD`)
       .then(res => {
         if(res.status >= 200) {
           const cryptoInfo = res.data.RAW;
-          this.setState({cryptoInfo, error:undefined});
+          this.setState({
+            cryptoInfo,
+            error:undefined,
+          });
         } else {
           throw Error('FETCH ERROR');
         }
@@ -50,19 +52,18 @@ class App extends React.Component {
     await axios.get(`https://min-api.cryptocompare.com/data/pricemulti?fsyms=${fiftyCryptos.join(",")}&tsyms=USD`)
          .then(res => {
            const cryptos = res.data;
-           this.setState({cryptos});
+           this.setState({cryptos, loading:false});
         });
   }
 
   public render() {
 
     return (
-      
       <div className="App">
         <div id='div-crypto' className="Crypto">
           <Search getCoinInfo={this.getCoinInfo} />
           <CryptoInfo cryptoInfo={this.state.cryptoInfo} error={this.state.error}/>
-          <Cryptos cryptos={this.state.cryptos} />
+          <Cryptos cryptos={this.state.cryptos} loading={this.state.loading}/>
         </div>
       </div>
     );

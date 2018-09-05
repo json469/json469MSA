@@ -3,10 +3,13 @@ import * as React from 'react';
 
 import '../App.css';
 
+import CircularProgress from '@material-ui/core/CircularProgress';
+
 class News extends React.Component {
 
     public state = {
 
+        loading: true,
         news: {}
     }
 
@@ -15,15 +18,13 @@ class News extends React.Component {
         await axios.get('https://newsapi.org/v2/top-headlines?q=crypto&apiKey=477befb9e1f344f290464430be05d39b')
         .then(res => {
           const news = res.data.articles;
-          this.setState({news});
+          this.setState({loading:false, news});
        });
     }
 
     public render() {
 
-        if (!this.state.news) {
-            return <div>Loading...</div>
-        }
+        if (this.state.loading) { return (<div id="loading-div"><CircularProgress thickness={5}/></div>) }
 
         return (
             <div>
