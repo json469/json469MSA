@@ -110,7 +110,7 @@ div.cryptoInfo-detail {
 div#cryptoInfo-error {
 
     font-size: 80%;
-    background:orchid;
+    background:orangered;
     width: 100%;
     padding: 1em;
     box-shadow: 1px 1px 0 lightgrey;
