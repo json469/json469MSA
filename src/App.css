@@ -1,0 +1,117 @@
+body {
+
+    background: #f1f1f1;
+    padding:48px;
+}
+
+div#app-bar {
+
+    margin-bottom: 8px;
+}
+
+span#app-bar-title {
+
+    padding-right: 16px;
+}
+
+div#search-div {
+    
+    font-size: 80%;
+    background:white;
+    width: 100%;
+    padding: 1em;
+    box-shadow: 1px 1px 0 lightgrey;
+}
+
+div#about-div {
+
+    font-size: 85%;
+    background:white;
+    width: 100%;
+    margin: 0 auto 4px auto;
+    padding: 1em;
+    box-shadow: 1px 1px 0 lightgrey;
+}
+
+div#news-list {
+
+    background:white;
+    width: 100%;
+    margin: 0 auto 4px auto;
+    padding: 1em;
+    box-shadow: 1px 1px 0 lightgrey;
+}
+
+span.news-header-row {
+
+    font-size: 85%;
+    font-weight: bold;
+}
+
+span.news-body-row {
+    
+    font-size: 85%;
+    font-weight: normal;
+}
+
+div#crypto-list {
+
+    background:white;
+    width: 100%;
+    margin: 4px auto 0px auto;
+    padding: 1em;
+    box-shadow: 1px 1px 0 lightgrey;
+}
+  
+span.name-col {
+
+    font-size: 85%;
+    font-weight: normal;
+}
+  
+span.price-col {
+
+    font-size: 85%;
+    float:right;
+}
+
+div#cryptoInfo-list {
+    
+    background:lightsteelblue;
+    width: 100%;
+    padding: 1em;
+    box-shadow: 1px 1px 0 lightgrey;
+}
+
+div#cryptoInfo-detail {
+
+    font-size: 80%;
+    padding-top: 2px;
+}
+
+span.price-up {
+
+    font-size: 80%;
+    color: lightseagreen;
+}
+
+span.price-down {
+
+    font-size: 80%;
+    color: orange;
+}
+
+div.cryptoInfo-detail {
+
+    font-size: 80%;
+    padding-top: 2px;
+}
+
+div#cryptoInfo-error {
+
+    font-size: 80%;
+    background:orchid;
+    width: 100%;
+    padding: 1em;
+    box-shadow: 1px 1px 0 lightgrey;
+}
